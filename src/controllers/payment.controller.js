@@ -1,4 +1,4 @@
-import mercadopago from 'mercadopago'
+import mercadopago from 'mercadopago';
 export const createOrder = async (req, res) => {
     mercadopago.configure({
       access_token: 
@@ -19,9 +19,15 @@ export const createOrder = async (req, res) => {
         success:"http://localhost:3000/success",
         failure:"http://localhost:3000/failure",
         pending:"http://localhost:3000/pending",
-      }
-    })
-    console.log(result)
-    res.send('Crear Orden');
+      },
+      notification_url:"https://7d3e-2803-c180-2100-7b39-9045-4572-dd59-d674.ngrok.io/webhook",
+    });
+    console.log(result);
+    res.send(result.body);
   };
+  export const receiveWebhook = (req, res ) => {
+    console.log(req.query);
+
+    res.send("webhook");
+  }
   

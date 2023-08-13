@@ -3,13 +3,13 @@ import { createOrder, receiveWebhook} from '../controllers/payment.controller.js
 
 const router = Router()
 
-router.get('/create-order',  createOrder);
-router.get('/success',(req, res) => res.send('Success'));
+router.post('/create-order',  createOrder);
+router.get('/success',(req, res) => res.send('success'));
 
-router.get('/failure',(req, res) => res.send('Failure'));
+router.get('/failure',(req, res) => res.send('failure'));
 
-router.get('/pending',(req, res) => res.send('Pending'));
+router.get('/pending',(req, res) => res.send('pending'));
 
-router.get('/webhook',receiveWebhook);
+router.post('/webhook',receiveWebhook);
 
 export default router 
