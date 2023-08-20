@@ -20,7 +20,7 @@ export const createOrder = async (req, res) => {
         failure:"http://localhost:3000/failure",
         pending:"http://localhost:3000/pending",
       },
-      notification_url:"https://7d3e-2803-c180-2100-7b39-9045-4572-dd59-d674.ngrok.io/webhook",
+      notification_url:"https://7cf7-2803-c180-2100-7b39-3982-3cb1-c6d-f8be.ngrok.io/webhook",
     });
     console.log(result);
     res.send(result.body);
